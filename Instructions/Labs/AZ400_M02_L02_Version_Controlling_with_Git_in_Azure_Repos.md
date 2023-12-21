@@ -110,7 +110,9 @@ In this task, you will step through the process of cloning a Git repository by u
 
     > **Note**: Getting a local copy of a Git repo is called *cloning*. Every mainstream development tool supports this and will be able to connect to Azure Repos to pull down the latest source to work with.
 
-4. On the **Clone Repository** panel, with the **HTTPS** Command line option selected, click the **Copy to clipboard** button next to the repo clone URL.
+4. On the **Clone Repository** panel
+   - with the **HTTPS** Command line option selected
+   - click the **Copy to clipboard** button next to the repo clone URL.
 
     > **Note**: You can use this URL with any Git-compatible tool to get a copy of the codebase.
 
@@ -126,7 +128,7 @@ In this task, you will step through the process of cloning a Git repository by u
 
     > **Note**: To see all relevant commands, you can start by typing **Git**.
 
-9. In the **Provide repository URL or pick a repository source** text box, paste the repo clone URL you copied earlier in this task and press the **Enter** key.
+9.  In the **Provide repository URL or pick a repository source** text box, paste the repo clone URL you copied earlier in this task and press the **Enter** key.
 10. Within the **Select Folder** dialog box, navigate to the C: drive, create a new folder named **Git**, select it, and then click **Select Repository Location**.
 11. When prompted, log in to your Azure DevOps account.
 12. After the cloning process completes, once prompted, in the Visual Studio Code, click **Open** to open the cloned repository.
@@ -168,7 +170,9 @@ In this task, you will use Visual Studio Code to commit changes.
 
     > **Note**: We will discuss **staging** later in the lab.
 
-7. In the lower left corner of the Visual Studio Code window, to the right of the **main** label, note the **Synchronize Changes** icon of a circle with two vertical arrows pointing in the opposite directions and the number **1** next to the arrow pointing up. Click the icon and, if prompted, whether to proceed, click **OK** to push and pull commits to and from **origin/main**.
+7. In the lower left corner of the Visual Studio Code window, to the right of the **main** label
+   - note the **Synchronize Changes** icon of a circle with two vertical arrows pointing in the opposite directions and the number **1** next to the arrow pointing up. 
+   - Click the icon and, if prompted, whether to proceed, click **OK** to push and pull commits to and from **origin/main**.
 
 #### Task 2: Review commits
 
@@ -191,14 +195,18 @@ In this task, you will explore the use of staging changes by using Visual Studio
         //My second change
     ```
 
-3. In the Visual Studio Code window, switch back the **EXPLORER** tab, navigate to the **/eShopOnWeb/src/Web/Constants.cs** file and select it. This will automatically display its content in the details pane.
+3. In the Visual Studio Code window, switch back the **EXPLORER** tab
+   - navigate to the **/eShopOnWeb/src/Web/Constants.cs** file and select it. 
+   - This will automatically display its content in the details pane.
 4. Add to the **Constants.cs** file a comment on the first line and save the file.
 
     ```csharp
     // My third change
     ```
 
-5. In the Visual Studio Code window, switch to the **SOURCE CONTROL** tab, hover the mouse pointer over the **Program.cs** entry, and click the plus sign on the right side of that entry.
+5. In the Visual Studio Code window, switch to the **SOURCE CONTROL** tab
+   - hover the mouse pointer over the **Program.cs** entry
+   - and click the plus sign on the right side of that entry.
 
     > **Note**: This stages the change to the **Program.cs** file only, preparing it for commit without **Constants.cs**.
 
