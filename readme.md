@@ -1,6 +1,20 @@
 # AZ-400: Designing and Implementing Microsoft DevOps Solutions
 
-## Welcome
+## Customized for Client
+
+Client: BBL
+Updated: 20 Dec 2023
+
+## Guidelines
+
+### Day 1
+
+1. [Lab 00: Validate Labs Environment](./Instructions/Labs/AZ400_M00_Validate_lab_environment.md)
+2. [Lab 01: Agile Planning and Portfolio Management with Azure Boards](./Instructions/Labs/AZ400_M01_L01_Agile_Planning_and_Portfolio_Management_with_Azure_Boards.md)
+3. [Lab 02: Version Controlling with Git in Azure Repos](./Instructions/Labs/AZ400_M02_L02_Version_Controlling_with_Git_in_Azure_Repos.md)
+
+
+## FYI
 
 This repository is for instructors teaching Microsoft courses. If you are in class, please ask your instructor for assistance. 
 
