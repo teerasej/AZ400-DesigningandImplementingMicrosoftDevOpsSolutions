@@ -16,26 +16,24 @@ lab:
 
 ## Lab overview
 
-In this lab, you'll learn about the agile planning and portfolio management tools and processes provided by Azure Boards and how they can help you quickly plan, manage, and track work across your entire team. You'll explore the product backlog, sprint backlog, and task boards that can track the flow of work during an iteration. We'll also look at the enhanced tools in this release to scale for larger teams and organizations.
+ในแลปนี้ คุณจะได้ เรียนรู้เกี่ยวกับ วิธีการวางแผนและการจัดการพอร์ตโฟลิโอที่มีอยู่ใน Azure Boards เพื่อให้มันช่วยให้คุณ และทีของคุณวางแผน จัดการ และติดตามงานได้อย่างรวดเร็ว ทั้ง คุณจะได้เรียนรู้การใช้งาน product backlog, sprint backlog, และ task boards  ที่สามารถติดตามการดำเนินการกับหน้าที่งานในช่วงเวลาที่กำหนด และได้ลองใช้งานเคร่ื่องมือที่สามารถนำไปใช้งานกับทีมขนาดใหญ่ และองค์กรขนาดใหญ่ได้
 
 ## Objectives
 
-After you complete this lab, you will be able to:
+ในแลปนี้คุณจะได้เรียนรู้วิธีการ:
 
-- Manage teams, areas, and iterations.
-- Manage work items.
-- Manage sprints and capacity.
-- Customize Kanban boards.
-- Define dashboards.
-- Customize team process.
-
-## Estimated timing: 60 minutes
+- จัดการ teams, areas, iterations
+- จัดการ work items
+- จัดการ sprints และ capacity
+- ปรับแต่ง Kanban boards
+- กำหนด dashboards
+- ปรับแต่ง team process
 
 ## Instructions
 
 ### Exercise 0: Configure the lab prerequisites
 
-> **Note**: If you already created this project during previous labs, this exercise can be skipped.
+> **Note**: ถ้าคุณได้สร้าง project นี้ ในแลปก่อนหน้านี้ไว้แล้ว สามารถข้ามขั้นตอนนี้ได้เลยนะ
 
 In this exercise, you will set up the prerequisites for the lab, which consist of a new Azure DevOps project with a repository based on the [eShopOnWeb](https://github.com/MicrosoftLearning/eShopOnWeb).
 
@@ -51,344 +49,523 @@ In this task, you will create an **eShopOnWeb** Azure DevOps project to be used 
 
 ### Exercise 1: Manage Agile project
 
-In this exercise, you will use Azure Boards to perform a number of common agile planning and portfolio management tasks, including management of teams, areas, iterations, work items, sprints and capacity, customizing Kanban boards, defining dashboards, and customizing team processes.
+ในแบบฝึกหัดนี้ คุณจะได้ใช้ Azure Boards เพื่อจัดการกับหลายๆ งานที่เกี่ยวข้องกับการวางแผนงาน Agile ทั่วๆ ไป ซึ่งรวมถึงการจัดการ teams, areas, iterations, work items, sprints และ capacity, การปรับแต่ง Kanban boards, การกำหนด dashboards, และการปรับแต่ง team process
 
 #### Task 1: Manage teams, areas, and iterations
 
-In this task, you will create a new team and configure its area and iterations.
+ในส่วนนี้ คุณจะสร้าง team ใหม่ และกำหนด area และ iterations ให้กับ team นี้
 
-Each new project is configured with a default team, which name matches the project name. You have the option of creating additional teams. Each team can be granted access to a suite of Agile tools and team assets. The ability to create multiple teams gives you the flexibility to choose the proper balance between autonomy and collaboration across the enterprise.
+- ใน project ใหม่ จะมีการกำหนดค่าเริ่มต้นของ team ที่มีชื่อตรงกับชื่อของ project 
+- คุณสามารถสร้าง team เพิ่มเติมได้ 
+- แต่ละ team สามารถกำหนดสิทธิ์การเข้าถึง และกำหนดความสามารถใช้งาน Agile tools และ team assets ได้ 
+- การสร้าง team เพิ่มเติม จะช่วยให้คุณสามารถเลือกใช้งานได้อย่างเหมาะสม ระหว่างการให้ความเป็นอิสระ และการทำงานร่วมกัน ในองค์กร
 
-1. Verify that the web browser displays your Azure DevOps organization with the **EShopOnWeb** project you generated in the previous exercise.
+1. ให้ตรวจสอบว่า บนเว็บเบราว์เซอร์ มีการแสดงผลของ Azure DevOps organization และ project **EShopOnWeb** ที่คุณสร้างไว้ในแลปก่อนหน้านี้      
 
-    > **Note**: Alternatively, you can access the project page directly by navigating to the [<https://dev.azure.com/>`<your-Azure-DevOps-account-name>`/EShopOnWeb) URL, where the `<your-Azure-DevOps-account-name>` placeholder, represents your account name.
+    > **หมายเหตุ**: หรือ คุณสามารถเข้าถึงหน้า project โดยตรง โดยใช้ URL [<https://dev.azure.com/>`<your-Azure-DevOps-account-name>`/EShopOnWeb) โดยที่ `<your-Azure-DevOps-account-name>` คือ ชื่อของ account ของคุณ
 
-2. Click the cogwheel icon labeled **Project settings** located in the lower left corner of the page to open the **Project settings** page.
 
-    ![Azure DevOps project window. Click on "Project settings" option](images/m1/project_settings_v1.png)
+2. คลิกที่ไอคอนฟันเฟืองที่มีชื่อว่า **Project settings** ที่อยู่ด้านล่างขวาของหน้าจอ เพื่อเปิดหน้า **Project settings** จะแสดงรายละเอียดการตั้งค่าโปรเจคแบบรูปด้านล่าง
 
-3. In the **General** section, select the **Teams** tab. There is already a default team in this project, **EShopOnWeb Team** but you'll create a new one for this lab. Click **New Team**.
+    ![หน้าต่าง Azure DevOps Project คลิกที่ปุ่ม Project Setting](images/m1/project_settings_v1.png)
+
+
+3. ในส่วน **General** ให้เลือกแท็บ **Teams** สังเกตว่า จะมีมีการกำหนด team ที่มีชื่อตรงกับชื่อของ project เป็นค่าเริ่มต้น แต่คุณจะสร้าง team ใหม่สำหรับแลปนี้ 
+
+    3.1 คลิกที่ปุ่ม **New Team** ด้านขวาสุด
 
     ![In project settings window, "Teams" tab, click on "New Team"](images/m1/new_team_v1.png)
 
-4. On the **Create a new team** pane, in the **Team name** textbox, type **EShop-Web**, leave other settings with their default values, and click **Create**.
+
+4. ในหน้าต่าง **Create a new team** ให้ใส่ชื่อ team ใหม่เป็น **EShop-Web** และคลิกที่ปุ่ม **Create** เพื่อสร้าง team ใหม่
 
     ![In "create a new team" window, call your new team "EShop-Web" and click "Create"](images/m1/eshopweb-team_v1.png)
 
-5. In the list of **Teams**, select the newly created team to view its details.
 
-    > **Note**: By default, the new team has only you as its member. You can use this view to manage such functionality as team membership, notifications, and dashboards.
+5. ในรายการ **Teams** ให้คลิกเลือก team ที่คุณสร้างขึ้นมาใหม่ เพื่อดูรายละเอียดของ team นี้
 
-6. Click **Iterations and Area Paths** link at the top of the **EShop-Web** page to start defining the schedule and scope of the team.
+    > **หมายเหตุ**: โดยค่าเริ่มต้น ใน team ใหม่ มีแค่คุณเท่านั้นที่เป็นสมาชิก คุณสามารถใช้หน้าต่างนี้ เพื่อจัดการกับสมาชิกใน team, การแจ้งเตือน และ dashboards ได้
+
+
+6. คลิกที่ลิงค์ **Iterations and Area Paths** ที่อยู่ด้านบนของหน้า **EShop-Web** เพื่อเริ่มสร้าง กำหนดการ (Schedule) และขอบเขตของ team
 
     ![In project settings window, "Teams" tab, "EShop-WEB" team, click on "Iterations and Area Paths"](images/m1/EShop-WEB-iterationsareas_v1.png)
 
-7. At the top of the **Boards** pane, select the **Iterations** tab and then click **+ Select iteration(s)**.
+
+7. ที่ด้านบนของหน้าต่าง **Boards** ให้เลือกแท็บ **Iterations** และคลิกที่ปุ่ม **+ Select iteration(s)**
 
     ![In the "iterations" tab, click on "Select Iteration"](images/m1/EShop-WEB-select_iteration_v1.png)
 
-8. Select **EShopOnWeb\Sprint 1** and click **Save and close**. Note that this first sprint will show up in the list of iterations, but the Dates are not set yet.
-9. Select **Sprint 1** and click the **ellipsis (...)**. From the context menu, select **Edit**.
 
-     ![In the "iterations" tab, click on "Edit"](images/m1/EShop-WEB-edit_iteration_v1.png)
 
-    > **Note**: Specify the Start Date as the first work day of last week, and count 3 full work weeks for each sprint. For example, if March 6 is the first work day of the sprint, it goes until March 24th. Sprint 2 starts on March 27, which is 3 weeks out from March 6.
+8. เลือก **EShopOnWeb\Sprint 1** และคลิกที่ปุ่ม **Save and close**. สังเกตว่า สปริ้นท์แรกนี้จะปรากฏในรายการของ iterations แต่ยังไม่ได้กำหนดวันที่เริ่มต้นและสิ้นสุด
 
-10. Repeat the previous step to add **Sprint 2** and **Sprint 3**. You could say that we are currently in the 2nd week of the first sprint.
+    ![In the "iterations" tab, select "EShopOnWeb\Sprint 1" and click "Save and close"](images/m1/EShop-WEB-edit_iteration_v1.png)
+
+
+9. เลือก **Sprint 1** และคลิกที่**เครื่องหมาย 3 จุด (...)** จากนั้นเลือก **Edit**.
+
+    ![In the "iterations" tab, click on "Edit"](images/m1/EShop-WEB-edit_iteration_v1.png)
+
+    > **หมายเหตุ**: กำหนดวันที่เริ่มต้นเป็นวันแรกของสัปดาห์ที่แล้ว และนับ 3 สัปดาห์เต็ม สำหรับแต่ละ sprint ตัวอย่างเช่น ถ้าวันที่ 6 มีนาคมเป็นวันแรกของสัปดาห์ สัปดาห์แรกจะเริ่มต้นในวันที่ 6 มีนาคม และจะสิ้นสุดในวันที่ 24 มีนาคม สัปดาห์ที่สองจะเริ่มต้นในวันที่ 27 มีนาคม ซึ่งเป็น 3 สัปดาห์หลังจากวันที่ 6 มีนาคม
+
+10. ทำซ้ำขั้นตอนก่อนหน้านี้ เพื่อสร้าง **Sprint 2** และ **Sprint 3** โดยในที่นี้ให้สังเกตว่าวันที่ปัจจุบันของเรา อยู่ในสัปดาห์ที่ 2 ของ Sprint 2
 
     ![Do the same for Sprint 2 and 3, make sure they are created for "EShop-Web" team](images/m1/EShop-WEB-3sprints_v1.png)
 
-11. Still in the **Project Settings / Boards / Team Configuration** pane, at the top of the pane, select the **Areas** tab. You will find there an automatically generated area with the name matching the name of the team.
+11. ยังอยู่ในหน้าต่าง **Project Settings / Boards / Team Configuration** ที่ด้านบนของหน้าต่าง ให้เลือกแท็บ **Areas** คุณจะพบว่ามีการสร้าง area อัตโนมัติ ที่มีชื่อตรงกับชื่อของ team
 
 ![From Areas, select EShopOnWeb\EShop-Web](images/m1/EShop-WEB-areas_v1.png)
 
-12. Click the ellipsis symbol (...) next to the **default area** entry and, in the dropdown list, select **Include sub areas**.
+
+12.  คลิกที่เครื่องหมาย 3 จุด (...) ที่อยู่ติดกับรายการ **default area** และในรายการแบบเลื่อนลง ให้เลือก **Include sub areas**.
 
     ![In the "Areas" tab, clik on the ellipsis icon (...) for "EShop-WEB" area and select "Include sub areas"](images/m1/EShop-WEB-sub_areas_v1.png)
 
-    > **Note**: The default setting for all teams is to exclude sub-area paths. We will change it to include sub-areas so that the team gets visibility into all of the work items from all teams. Optionally, the management team could also choose to not include sub-areas, which automatically removes work items from their view as soon as they are assigned to one of the teams.
+    > **หมายเหตุ**: การตั้งค่าเริ่มต้นสำหรับทีมทั้งหมด คือ ไม่รวม sub-area paths แต่เราจะเปลี่ยนเป็นแบบ "รวม sub-areas" เพื่อให้ทีมได้เห็นงานทั้งหมดจากทีมอื่นๆ ในทางกลับกัน ที่ทางทีมระดับ management สามารถเลือกแบบ "ไม่รวม sub-areas" ซึ่งจะลบ work items ออกจากมุมมองของทีมที่เป็นเจ้าของงาน ทันทีที่มีการกำหนดให้กับทีมอื่นๆ
 
 #### Task 2: Manage work items
 
-In this task, you will step through common work item management tasks.
+ในแบบฝึกหัดนี้ คุณจะได้เรียนรู้การจัดการกับ work items สำคัญๆ ใน Azure DevOps ไม่ว่าจะเป็นการอธิบายงานที่ต้องทำ, สิ่งที่ขัดขวางในการ release งาน (Impediment to release), test definitions, หรือรายการอื่นๆ ที่สำคัญ 
 
-Work items play a prominent role in Azure DevOps. Whether describing work to be done, impediments to release, test definitions, or other key items, work items are the workhorse of modern projects. In this task you'll focus on using various work items to set up the plan to extend the Parts Unlimited site with a product training section. While it can be daunting to build out such a substantial part of a company's offering, Azure DevOps and the Scrum process make it very manageable.
+โจทย์ตัวอย่างคือ
 
-> **Note**: This task is designed to illustrate a variety of ways you can create different kinds of work items, as well as to demonstrate the breadth of features available on the platform. As a result, these steps should not be viewed as prescriptive guidance for project management. The features are intended to be flexible enough to fit your process needs, so explore and experiment as you go.
+- คุณจะเน้นการใช้งาน work items ต่างๆ เพื่อวางแผนในการขยายส่วนของเว็บไซต์บริษัท Parts Unlimited ในส่วนของ Product Training Section 
+- แม้ว่าจะเป็นงานที่ยากลำบากในการสร้างส่วนที่สำคัญของบริษัท แต่ Azure DevOps และ Scrum process ทำให้งานนี้เป็นไปได้อย่างง่ายดาย
 
-1. In the vertical navigational pane of the Azure DevOps portal, select the **Boards** icon and, select **Work Items**.
+> **Note**: ในแบบฝึกหัดนี้ จะแสดงให้เห็นถึงวิธีการสร้าง work items ต่างๆ และความสามารถที่มีอยู่ใน platform นี้ ซึ่งไม่ใช่เพื่อให้คุณนำไปใช้ในการจัดการ project ของคุณ แต่เป็นการแสดงถึงความยืดหยุ่นของ platform นี้ ซึ่งคุณสามารถสำรวจและทดลองใช้งานได้ตามที่คุณต้องการ
 
-    > **Note**: There are many ways to create work items in Azure DevOps, and we'll explore a few of them. Sometimes it's as simple as firing one off from a dashboard.
+#### การสร้าง Work items: Epic 
 
-2. On the **Work Items** window, click on **+ New Work Item > Epic**.
+1. ในแถบเมนูด้านซ้ายของ Azure DevOps portal, เลือกไอคอนเมนู **Boards** และเลือก **Work Items**
+
+    > **หมายเหตุ**: มีหลายวิธีในการสร้าง work items ใน Azure DevOps และเราจะสำรวจวิธีการสร้างบางวิธี บางครั้งเพียงแค่สร้าง work items จาก dashboard มันก็ง่ายดี
+
+2. ในหน้าต่าง **Boards > Work Items** คลิกที่ **+ New Work Item > Epic**.
 
     ![In the "Boards">"Work Items" window, click on "New work item" >Epic](images/m1/EShop-WEB-create_epic_v1.png)
 
-3. In the **Enter title** textbox, type **Product training**.
-4. In the upper left corner, select the **Unassigned** entry and, in the dropdown list, select your user account in order to assign the new work item to yourself.
-5. Next to the **Area** entry, select the **eShopOnWeb** entry and, in the dropdown list, select **EShop-WEB**. This will set the **Area** to **eShopOnWeb\EShop-WEB**.
-6. Next to the **Iteration** entry, select the **eShopOnWeb** entry and, in the dropdown list, select **Sprint 2**. This will set the **Iteration** to **eShopOnWeb\Sprint 2**.
-7. Click **Save** to finalize your changes. **Do not close it**.
+3. ในช่อง **Enter title** ให้พิมพ์ **Product training**
+4. ในมุมบนซ้ายของหน้าต่าง ให้เลือก **Unassigned** 
+   - และในรายการแบบเลื่อนลง ให้ค้นหา และเลือก account ของคุณเอง เพื่อที่จะกำหนด work item ให้กับตัวเอง
+5. ต่อไป ที่ **Area** 
+   - ให้เลือก **eShopOnWeb** 
+   - ในรายการ drop down menu ให้เลือก **EShop-WEB** ซึ่งจะกำหนด **Area** เป็น **eShopOnWeb\EShop-WEB**
+6. ต่อไปในส่วน **Iteration** ให้เลือก **eShopOnWeb** 
+   - และในรายการ drop down menu ให้เลือก **Sprint 2** ซึ่งจะกำหนด **Iteration** เป็น **eShopOnWeb\Sprint 2**
 
     ![Enter previously shown information and click "Save" in Epic window](images/m1/EShop-WEB-epic_details_v1.png)
 
-    > **Note**: Ordinarily you would want to fill out as much information as possible, but this is sufficient for the purposes of this lab.
+   
+7. คลิกที่ปุ่ม **Save** เพื่อบันทึกการเปลี่ยนแปลง และ **อย่าปิดหน้าต่างนี้ นะ นะ นะ**
 
-    > **Note**: The work item form includes all of the relevant work item settings. This includes details about who it's assigned to, its status across many parameters, and all the associated information and history for how it has been handled since creation. One of the key areas to focus on is the **Related Work**. We will explore one of the ways to add a feature to this epic.
+    ![Enter previously shown information and click "Save" in Epic window](images/m1/EShop-WEB-epic_details_v1.png)
 
-8. In the **Related work** section on the lower right-side, select the **Add link** entry and, in the dropdown list, select **New item**.
-9. On the **Add link** panel, in the **Link Type** dropdown list, select **Child**. Next, in the **Work item type** dropdown list, select **Feature**, in the **Title** textbox, type **Training dashboard** and click **OK**.
+    > **หมายเหตุ**: ตามปกติ คุณควรจะต้องกรอกข้อมูลให้ครบทุกช่อง แต่ในแบบฝึกหัดนี้ ข้อมูลที่กรอกเพียงนี้ก็เพียงพอแล้ว สำหรับการทดลองใช้งาน
+
+    > **หมายเหตุ**: หน้าต่างของ work item จะแสดงรายละเอียดที่เกี่ยวข้องกับ work item นั้นๆ ซึ่งรวมถึงรายละเอียดเกี่ยวกับผู้รับผิดชอบ, สถานะของงาน, และข้อมูลอื่นๆ ที่เกี่ยวข้องกับงานนั้นๆ ตัวหนึ่งในส่วนที่สำคัญคือ **Related Work** ซึ่งเป็นส่วนที่จะแสดงรายละเอียดเกี่ยวกับงานที่เกี่ยวข้อง ในส่วนนี้ เราจะสำรวจวิธีการเพ
+
+
+#### การสร้าง Work items:  Feature ให้กับ Epic
+
+8. ในส่วน **Related work** ที่อยู่ด้านล่างขวา (ล่าาางขวาาาาาสุด) ให้กดเลือก **Add link** และในรายการแบบเลื่อนลง ให้เลือก **New item**
+
+
+9. ในหน้าต่าง **Add link** 
+    - ให้เลือกรายการ **Link Type** เป็น **Child** 
+    - และในรายการ **Work item type** ให้เลือก **Feature** 
+    - ในช่อง **Title** ให้พิมพ์ **Training dashboard** และคลิกที่ปุ่ม **OK**
 
     ![Include Title "Training Dashboard" and click "OK"](images/m1/EShop-WEB-create_child_feature.png)
 
-    > **Note**: On the **Training dashboard** panel, note that the assignment, **Area**, and **Iteration** are already set to the same values as the epic that the feature is based on. In addition, the feature is automatically linked to the parent item it was created from.
 
-10. Click **Add link** to save the Child item. On the (New Feature) **Training dashboard** panel, click **Save & Close**.
+    > **Note**: หน้าต่าง **Training dashboard** จะแสดงรายละเอียดเกี่ยวกับ work item ที่เราสร้างขึ้นมาใหม่ ซึ่งรวมถึงการกำหนดผู้รับผิดชอบ, **Area**, และ **Iteration** ที่มีค่าเหมือนกับ work item ตัวต้นแบบที่เราสร้างขึ้นมา นอกจากนี้  work item ตัวต้นแบบ จะถูก link ไปยัง work item ลูกที่เราสร้างขึ้นมาใหม่
 
-![Epic with Linked Child Item](images/m1/EShop-WEB-epic_with_linked_item_v1.png)
 
-11. In the vertical navigation pane of the Azure DevOps portal, in the list of the **Boards** items, select **Boards**.
-12. On the **Boards** panel, select the **EShop-WEB boards** entry. This will open the board for that particular team.
+10. คลิกที่ปุ่ม **Add link** เพื่อบันทึกการเปลี่ยนแปลงของ Child Item และในหน้าต่าง **Training dashboard** คลิกที่ปุ่ม **Save & Close** เพื่อบันทึกการเปลี่ยนแปลง
+
+    ![Epic with Linked Child Item](images/m1/EShop-WEB-epic_with_linked_item_v1.png)
+
+11. ในแถบเมนูด้านซ้ายของ Azure DevOps portal, เลือกไอคอนเมนู **Boards** และเลือก **Boards**
+
+
+12. ในแถบ **Boards** ให้เลือก **EShop-WEB boards** จะเป็นการเปิดหน้าต่าง **Boards** ของทีมนั้นๆ 
 
     ![ In "Boards>Boards" window, select "EShop-WEB boards"](images/m1/EShop-WEB-_boards_v1.png)
 
-13. On the **Boards** panel, in the upper right corner, select the **Backlog items** entry and, in the dropdown list, select **Features**.
 
-    > **Note**: This will make it easy to add tasks and other work items to the features.
+13. ในแถบ **Boards** ให้เลือก **Backlog items** และในรายการแบบเลื่อนลง ให้เลือก **Features**
 
-14. Hover with the mouse pointer over the rectangle representing the **Training dashboard** feature. This will reveal the ellipsis symbol (...) in its upper right corner.
-15. Click the ellipsis (...) icon and, in the dropdown list, select **Add Product Backlog Item**.
+    > **หมายเหตุ**: การเลือก **Features** จะทำให้ง่ายต่อการเพิ่ม task และ work items อื่นๆ ใน feature นั้นๆ
+
+#### การสร้าง Work items: Product Backlog Item (PBI) ให้กับ Feature
+
+14. ใช้เมาส์ชี้ไปที่สี่เหลี่ยมที่แสดง feature ของ **Training dashboard**  จะปรากฏเครื่องหมาย 3 จุด (...) ที่มุมบนขวาของสี่เหลี่ยมนั้น
+
+15. คลิกที่เครื่องหมาย 3 จุด (...) และในรายการเมนูที่แสดงขึ้นมา ให้เลือก **Add Product Backlog Item**.
 
     ![Click on the ellipis for "Training dashboard" feature and click "Add Product Backlog Item"](images/m1/EShop-WEB-add_pb_v1.png)
 
-16. In the textbox of the new product backlog item, type **As a customer, I want to view new tutorials** and press the **Enter** key to save the entry.
 
-    > **Note**: This creates a new product backlog item (PBI) work item that is a child of the feature and shares its area and iteration.
+16. ในช่องข้อความของ product backlog item ใหม่ ให้พิมพ์ 
+    ```
+    As a customer, I want to view new tutorials
+    ```
+    และกดปุ่ม **Enter** เพื่อบันทึกการเปลี่ยนแปลง
 
-17. Repeat the previous step to add two more PBIs designed to enable the customer to see their recently viewed tutorials and to request new tutorials named, respectively, **As a customer, I want to see tutorials I recently viewed** and **As a customer, I want to request new tutorials**.
+    > **หมายเหตุ**: การกรอกข้อมูลนี้ จะสร้าง product backlog item (PBI) ใหม่ ซึ่งจะกลายเป็น child item ของ feature และมีการกำหนด **Area** และ **Iteration** เหมือนกับ feature ตัวหลัก
+
+
+17. ทำซ้ำแบบเดียวกัน เพื่อสร้าง PBI อีก 2 รายการ โดยออกแบบให้ลูกค้าสามารถเห็นวิดีโอที่เคยดูไว้ และสามารถขอวิดีโอใหม่ได้ ตามลำดับ โดยให้ตั้งชื่อว่า 
+    ```
+    As a customer, I want to see tutorials I recently viewed
+    ```
+    และ 
+    ```
+    As a customer, I want to request new tutorials
+    ```
+    เสร็จแล้วได้จะได้รายการ PBI 3 ตัว ดังรูป
 
     ![Repeat by clicking on "Add Product Backlog" ](images/m1/EShop-WEB-pbis_v1.png)
 
-18. On the **Boards** panel, in the upper right corner, select the **Features** entry and, in the dropdown list, select **Backlog items**.
+#### การจัดการ Backlog items ใน Kanban board
 
-     ![View Backlog Items" ](images/m1/EShop-WEB-backlog_v1.png)
+18. ในจากเมนูด้านขวาบน ของหน้า **Boards** ปัจจุบัน ให้เลือก **Features** และในรายการแบบเลื่อนลง ให้เลือก **Backlog items**.
 
-    > **Note**: Backlog items have a state that defines where they are relative to being completed. While you could open and edit the work item using the form, it's easier to just drag cards on the board.
+    > **หมายเหตุ**: ในแบบฝึกหัดนี้ คุณสามารถเลือกใช้งานได้ทั้งการใช้งานแบบ form และการใช้งานแบบ drag and drop บน board แต่ในแบบฝึกหัดนี้ คุณจะใช้งานแบบ drag and drop บน board เพื่อความสะดวก
 
-19. On the **Board** tab of the **EShop-WEB** panel, drag the first work item named **As a customer, I want to view new tutorials** from the **New** to **Approved** stage.
+
+19. ในแท่บ **Board** ของ **EShop-WEB** ให้ลาก work item ตัวแรกที่ชื่อว่า **As a customer, I want to view new tutorials** จากสถานะ **New** ไปยังสถานะ **Approved**
 
     ![Move the WIT from "New" state to "Approved"](images/m1/EShop-WEB-new2ap_v1.png)
 
-    > **Note**: You can also expand work item cards to get to conveniently editable details.
+    > **หมายเหตุ**: คุณสามารถขยาย work item card เพื่อแก้ไขรายละเอียดได้ง่ายๆ
 
-20. Hover with the mouse pointer over the rectangle representing the work item you moved to the **Approved** stage. This will reveal the down facing caret symbol.
-21. Click the down facing caret symbol to expand the work item card, select the **Unassigned** entry, and in the list of user accounts, select your account to assign the moved PBI to yourself.
-22. On the **Board** tab of the **EShop-WEB** panel, drag the second work item named **As a customer, I want to see tutorials I recently viewed** from the **New** to the **Committed** stage.
-23. On the **Board** tab of the **EShop-WEB** panel, drag the third work item named **As a customer,  I want to request new tutorials** from the **New** to the **Done** stage.
+20. ให้เลื่อนเมาส์ไปที่ work item ที่คุณย้ายไปที่สถานะ **Approved** จากนั้น ให้คลิกที่เครื่องหมายลูกศรที่ชี้ลง เพื่อแสดงรายละเอียดของ work item นั้นๆ
+
+21. คลิกที่เครื่องหมายลูกศรที่ชี้ลง เพื่อแสดงรายละเอียดของ work item นั้นๆ 
+    - จากนั้น ให้เลือกรายการ **Unassigned** 
+    - ในรายการแบบเลื่อนลง ให้ค้นหา และเลือก account ของคุณเอง เพื่อที่จะกำหนด work item ให้กับตัวเอง
+
+22. ในแท่บ **Board** ของ **EShop-WEB** ให้ลาก work item ตัวที่สองที่ชื่อว่า **As a customer, I want to see tutorials I recently viewed** จากสถานะ **New** ไปยังสถานะ **Committed**
+
+23. ในแท่บ **Board** ของ **EShop-WEB** ให้ลาก work item ตัวที่สามที่ชื่อว่า **As a customer, I want to request new tutorials** จากสถานะ **New** ไปยังสถานะ **Done**
 
     ![WITs moved to the specified columns from previous steps](images/m1/EShop-WEB-board_pbis_v1.png)
 
-    > **Note**: The task board is one view into the backlog. You can also use the tabular view.
+    > **หมายเหตุ**: หน้าต่างของ task board นี้ จะแสดงให้เห็นถึงงานที่ต้องทำ แต่คุณสามารถใช้งานแบบ tabular view ได้เช่นกัน
 
-24. On the **Board** tab of the **EShop-WEB** pane, at the top of the pane, click **View as Backlog** to display the tabular form.
+
+24. ในแท่บ **Board** ของ **EShop-WEB** ให้สังเกตด้่านบนซ้าย 
+    - ให้คลิกที่ปุ่ม **View as Backlog** เพื่อแสดงในรูปแบบ tabular
 
     ![In the "EShop-WEB" board, click "View as Backlog"](images/m1/EShop-WEB-view_backlog_v1.png)
 
-    > **Note**: You can use the plus sign directly under the **Backlog** tab label of the **EShop-WEB** panel to view nested tasks under these work items.
+    > **หมายเหตุ**: คุณสามารถใช้เครื่องหมายบวกที่อยู่ตรงกลางของแท่บ **Backlog** ของ **EShop-WEB** ในการแสดง task ที่อยู่ภายใต้ work item นั้นๆ
 
-    > **Note**: You can use the second plus sign directly left to the first backlog item to add a new task to it.
+    > **หมายเหตุ**: คุณสามารถใช้เครื่องหมายบวกที่สอง ที่อยู่ด้านซ่้ายสุด Product Backlog Item ในการเพิ่ม task ใหม่ใน work item นั้นๆ
 
-25. On the **Backlog** tab of the **EShop-WEB** pane, in the upper left corner of the pane, click the second plus sign from the top, the one next to the first work item. This will display the **NEW TASK** panel.
+
+#### การสร้าง Task จาก PRoduct Backlog Item (PBI)
+
+25. ในแท่บ **Backlog** ของ **EShop-WEB** ให้คลิกที่เครื่องหมายบวกที่สองที่อยู่ที่อยู่ด้านซ่้ายสุด Product Backlog Item ในการเพิ่ม task ใหม่ใน work item นั้นๆ จะปรากฏหน้าต่าง **NEW TASK** ขึ้นมา
+    - ในที่นี้ให้กดเพิ่ม task ให้กับ work item ที่ชื่อว่า **As a customer, I want to view new tutorials**
 
     ![Click on "+" to create Task](images/m1/new_task_v1.png)
 
-26. At the top of the **NEW TASK** panel, in the **Enter title** textbox, type **Add page for most recent tutorials**.
-27. On the **NEW TASK** panel, in the **Remaining Work** textbox, type **5**.
-28. On the **NEW TASK** panel, in the **Activity** dropdown list, select **Development**.
-29. On the **NEW TASK** panel, click **Save & Close**.
+26. ในช่อง **Enter title** ให้พิมพ์ **Add page for most recent tutorials**
+
+27. จากหน้าต่าง **NEW TASK**
+    - ในช่อง **Remaining Work** ให้พิมพ์ **5** 
+    - ใน Activity dropdown list, ให้เลือก **Development**
+    - คลิกที่ปุ่ม **Save & Close**
 
     ![Fill in "New task" fields and click "Save and Close"](images/m1/EShop-WEB-save_task_v1.png)
 
-30. Repeat the last five steps to add another task named **Optimize data query for most recent tutorials**. Set its **Remaining Work** to **3** and its **Activity** to **Design**. Click **Save & Close** once completed.
+28. ทำซ้ำขั้นตอนที่ผ่านมาอีกครั้ง โดย
+    - เพิ่ม task อีก 1 รายการ โดยตั้งชื่อว่า **Optimize data query for most recent tutorials** 
+    - กำหนด **Remaining Work** เป็น **5** 
+    - กำหนด **Activity** เป็น **Design** 
+    - คลิกที่ปุ่ม **Save & Close** เพื่อบันทึกการเปลี่ยนแปลง
+
+    ![Fill in "New task" fields and click "Save and Close"](images/m1/EShop-WEB-save_task_v1.png)
 
 #### Task 3: Manage sprints and capacity
 
-In this task, you will step through common sprint and capacity management tasks.
+ในแบบฝึกหัดนี้ คุณจะได้เรียนรู้การจัดการกับงานใน sprint และการจัดการกับ capacity ของทีม ซึ่งเป็นส่วนสำคัญของการทำงานในแต่ละ sprint โดยทั่วไปแล้ว การวางแผน sprint จะเกิดขึ้นในวันแรกของ sprint แต่ในแบบฝึกหัดนี้ คุณจะได้เรียนรู้การวางแผน sprint ในวันที่ 2 ของ sprint และการจัดการกับ capacity ของทีม
 
-Teams build the sprint backlog during the sprint planning meeting, typically held on the first day of the sprint. Each sprint corresponds to a time-boxed interval which supports the team's ability to work using Agile processes and tools. During the planning meeting, the product owner works with the team to identify those stories or backlog items to complete in the sprint.
+##### Planing Meeting
 
-Planning meetings typically consist of two parts. In the first part, the team and product owner identify the backlog items that the team feels it can commit to completing in the sprint, based on experience with previous sprints. These items get added to the sprint backlog. In the second part, the team determines how it will develop and test each item. They then define and estimate the tasks required to complete each item. Finally, the team commits to implementing some or all the items based on these estimates.
+- โดยทั่วไป planning meeting จะประกอบไปด้วย 2 ส่วน
+- ส่วนแรกคือ team และ product owner จะช่วยกันในการระบุ backlog items ที่ team สามารถทำได้ใน sprint นั้นๆ โดยพิจารณาจากประสบการณ์ใน sprint ที่ผ่านมา และในส่วนนี้ backlog items ที่ได้จะถูกเพิ่มลงใน sprint backlog
+- ส่วนที่สอง คือ team จะกำหนดวิธีการพัฒนาและทดสอบแต่ละ item และกำหนดและประเมิน task ที่จำเป็นต้องทำเพื่อให้สามารถทำงานในแต่ละ item ได้ ในที่สุด team จะกำหนดว่าจะทำงานกับ item ไหนบ้าง หรือทำงานกับทั้งหมด โดยพิจารณาจากการประเมินเวลาที่จำเป็นต้องใช้ในแต่ละ item
 
-The sprint backlog should contain all the information the team needs to successfully plan and complete work within the time allotted without having to rush at the end. Before planning the sprint, you'd want to have created, prioritized, and estimated the backlog and defined the sprints.
+#### Daily Scrum และ Sprints
+  
+1. ในแถบเมนูด้านซ้ายของ Azure DevOps portal, เลือกไอคอนเมนู **Boards** และเลือก **Sprints**.
 
-1. In the vertical navigational pane of the Azure DevOps portal, select the **Boards** icon and, in the list of the **Boards** items, select **Sprints**.
-2. On the **Taskboard** tab of the **Sprints** view, in the toolbar, on the right hand side, select the **View options** symbol (directly to the left of the funnel icon) and, in the **View options** dropdown list, select the **Work details** entry. Select **Sprint 2** as filter.
+
+2. ในแท่บ **Taskboard** ของ **Sprints** 
+   - ในแถบเมนูด้านขวาบน ให้เลือกไอคอนเมนู **View options** (อยู่ตรงกลางของไอคอน **Filter** และ **Refresh**) 
+   - และในรายการแบบเลื่อนลง ให้เลือก **Work details** และเลือก **Sprint 2** เพื่อแสดงงานที่ต้องทำใน sprint นี้
 
     ![In the "Boards">"Sprints" window, "EShop-WEB" team, select "View options" icon and click on "Work details"](images/m1/EShop-WEB-work_details_v1.png)
 
-    > **Note**: The current sprint has a pretty limited scope. There are two tasks in the **To do** stage. At this point, neither task has been assigned. Both show a numeric value to the right of **Unassigned** entry representing the remaining work estimate.
+    > **หมายเหตุ**: ใน sprint นี้ มีงานที่ต้องทำที่มีขอบเขตที่จำกัด 2 รายการ
+    
+    > ทั้งคู่อยู่ในสถานะ **To do** ในขณะนี้ ยังไม่มีการกำหนดผู้รับผิดชอบ
+    
+    > ทั้งคู่แสดงค่าตัวเลขทางด้านขวาของรายการ **Unassigned** ซึ่งแสดงถึงการประเมินเวลาที่เหลืออยู่
 
-3. Within the **ToDo** Column, notice the Task Item **Add page for most recent tutorials**, click the **Unassigned** entry and, in the list of user accounts, select your account to assign the task to yourself.
 
-4. Select the **Capacity** tab of the **Sprints** view.
 
-![Sprint Capacity View](images/m1/EShop-WEB-capacity_v1.png)
+3. ในคอลัมน์ **ToDo** 
+   - สังเกตว่ามี Task Item ที่ชื่อว่า **Add page for most recent tutorials**
+   - ให้คลิกที่ **Unassigned** และในรายการของบัญชีผู้ใช้
+   - และให้เลือกบัญชีของคุณเองเพื่อกำหนดงานให้กับตัวเอง
 
-    > **Note**: This view enables you to define what activities a user can take on and at what level of capacity.
 
-5. On the **Capacity** tab of the **Sprints** view, click **+Add User** and select your user account. For this user, set the **Activity** field to **Development** and, in the **Capacity per day** textbox, type **1**.
+#### การใช้งาน Capacity ใน Sprint 
 
-    > **Note**: This represents 1 hour of development work per day. Note that you can add additional activities per user in the case they do more than just development.
+4. เลือกแท่บ **Capacity** ของ **Sprints**
 
-![Set Development Capacity for a user](images/m1/EShop-WEB-capacity-setdevelopment_v1.png)
+    ![Sprint Capacity View](images/m1/EShop-WEB-capacity_v1.png)
 
-    > **Note**: Let's assume you're also going to take some vacation. Which should be added to the capacity view too.
+    > **หมายเหตุ**: หน้าต่างนี้ จะแสดงให้เห็นถึงการกำหนดกิจกรรมที่ผู้ใช้งานสามารถทำได้ และระดับของ capacity ที่กำหนดไว้
 
-6. On the **Capacity** tab of the **Sprints** view, directly next to the entry representing your user account, in the **Days off** column, click the **0 days** entry. This will display a panel where you can set your days off.
-7. In the displayed panel, use the calendar view to set your vacation to span five work days during the current sprint (within the next three weeks) and, once completed, click **OK**.
+5. ในแท่บ **Capacity** ของ **Sprints** 
+   - ให้คลิกที่ **+Add User** และเลือกบัญชีของคุณเอง
+   - ให้กำหนด **Activity** เป็น **Development** 
+   - และในช่อง **Capacity per day** ให้พิมพ์ **1** ชั่วโมงต่อวัน
+
+    > **หมายเหตุ**: ค่านี้ แสดงถึง 1 ชั่วโมงของงาน Development ต่อวัน สังเกตว่า คุณสามารถกำหนดกิจกรรมเพิ่มเติมให้กับผู้ใช้งานได้ ในกรณีที่พวกเขาทำงานอื่นๆ นอกเหนือจากงาน Development ในตัวอย่าง
+
+    ![Set Development Capacity for a user](images/m1/EShop-WEB-capacity-setdevelopment_v1.png)
+
+
+#### การเพิ่มวันหยุดของคุณใน Sprint
+
+สมมติว่าคุณมีแพลนจะลางานไปเที่ยวระหว่าง sprint นี้ ซึ่งควรจะเพิ่มเข้าไปใน capacity view ด้วย
+
+6. ในแท่บ **Capacity** ของ **Sprints** 
+   - ให้คลิกที่ **0 days** ในรายการของบัญชีผู้ใช้
+   - จะเป็นการแสดงหน้าต่างในส่วนที่คุณสามารถกำหนดวันหยุดของคุณใน sprint นี้ได้
+
+7. ในหน้าต่างที่แสดงขึ้นมา ให้ใช้การแสดงผลของปฏิทิน ในการกำหนดวันหยุดของคุณใน sprint นี้ โดยให้เลือกวันหยุดของคุณใน sprint นี้ ให้ครบ 4 วัน และเมื่อเสร็จแล้วให้คลิกที่ปุ่ม **OK**
 
     ![Enter "Start", "End" and "Days Off" as mentioned](images/m1/EShop-WEB-days_off_v1.png)
 
-8. Back on the **Capacity** tab of the **Sprints** view, click **Save**.
-9. Select the **Taskboard** tab of the **Sprints** view.
+8. ในแท่บ **Capacity** ของ **Sprints** ให้คลิกที่ปุ่ม **Save** เพื่อบันทึกการเปลี่ยนแปลง
+
+9. ในแท่บ **Taskboard** ของ **Sprints** ให้สังเกตส่วนของ Work Detail
+    - หากไม่มีให้กดปุ่ม View Options ด้านขวาบน และเลือก **Side Pane > Work Details**
 
     ![Review the "Work details" section information, all timing bars should be green. ](images/m1/EShop-WEB-work_details_window_v1.png)
 
-    > **Note**: Note that the **Work details** panel has been updated to reflect your available bandwidth. The actual number displayed in the **Work details** panel might vary, but your total sprint capacity will be equal to the number of working days remaining till the end of the sprint, since you allocated 1 hour per day. Take a note of this value since you will use it in the upcoming steps.
+    > **หมายเหตุ**: สังเกตว่า หน้าต่าง **Work details** ได้ถูกอัพเดทเพื่อแสดงผลของ capacity ที่คุณสามารถทำได้ จำนวนที่แสดงบนหน้าต่าง **Work details** อาจจะแตกต่างกันไป แต่จำนวนที่แสดงบนหน้าต่าง **Work details** จะเท่ากับจำนวนวันทำงานที่เหลืออยู่ใน sprint นี้ เนื่องจากคุณกำหนดให้ทำงาน 1 ชั่วโมงต่อวัน โดยให้สังเกตค่านี้ เนื่องจากคุณจะใช้ค่านี้ในขั้นตอนต่อไป
 
-    > **Note**: One convenient feature of the boards is that you can easily update key data in-line. It's a good practice to regularly update the **Remaining Work** estimate to reflect the amount of time expected for each task. Let's say you've reviewed the work for the **Add page for most recent tutorials** task and found that it will actually take longer than originally expected.
+    > **หมายเหตุ**: คุณสามารถอัพเดทข้อมูลได้ง่ายๆ โดยการใช้งานแบบ in-line โดยเป็นการอัพเดทค่า **Remaining Work** ให้สอดคล้องกับเวลาที่คาดว่าจะใช้ในการทำงาน 
 
-10. On the **Taskboard** tab of the **Sprints** view, in the square box representing the **Add page for most recent tutorials**, set the estimated number of hours to **14**, to match your total capacity for this sprint, which you identified in the previous step.
+
+#### การจัดการกับงานที่เกิน capacity ของทีม
+
+ในขั้นตอนต่อไป คุณจะต้องอัพเดทค่า **Remaining Work** ของ task ที่ชื่อว่า **Add page for most recent tutorials** เพิ่มขึ้น เพราะประเมินผิด
+
+10. ในแท่บ **Taskboard** ของ **Sprints** 
+    - ให้คลิกที่สี่เหลี่ยมที่แสดง **Add page for most recent tutorials** 
+    - ในช่อง **Remaining Work** ให้พิมพ์ **14** 
+    - และกดปุ่ม **Enter** เพื่อบันทึกการเปลี่ยนแปลง
+    - ทำแบบเดียวกับ task ที่ชื่อว่า **Optimize data query for most recent tutorials** โดยให้กำหนด **Remaining Work** เป็น **3** ชั่วโมง
 
     ![Review the "Work details" section information, team´s assigned time is bigger than capacity.](images/m1/EShop-WEB-over_capacity_v1.png)
 
-    > **Note**: This automatically expands the **Development** and your personal capacities to their maximum. Since they're large enough to cover the assigned tasks, they stay green. However, the overall **Team** capacity is exceeded due to the additional 3 hours required by the **Optimize data query for most recent tutorials** task.
+    แปลไทย
 
-    > **Note**: One way to resolve this capacity issue would be to move the task to a future iteration. There are a few ways this could be done. You could, for example, open the task here and edit it within the panel providing access to the task details. Another approach would be to use the **Backlog** view, which provides an in-line menu option to move it. At this point though, don't move the task yet.
+    > **หมายเหตุ**: การกำหนดค่านี้ จะทำให้ค่า **Development** และ **Capacity** ของคุณถูกกำหนดให้เป็นค่าสูงสุด โดยที่ค่านี้จะเพียงพอกับงานที่ได้รับมอบหมาย แต่ค่า **Team** จะเกินกว่าค่าที่กำหนดไว้ เนื่องจากมีการกำหนดเวลาเพิ่มเติม 3 ชั่วโมง ใน task ที่ชื่อว่า **Optimize data query for most recent tutorials**
 
-11. On the **Taskboard** tab of the **Sprints** view, in the toolbar, on the right hand side, select the **View options** symbol (directly to the left of the funnel icon) and, in the **View options** dropdown list, select the **Assigned To=** entry.
 
-    > **Note**: This adjusts your view such that you can review the progress of tasks by person instead of by backlog item.
+    > แนวทางการแก้ไขปัญหานี้ คือ คุณสามารถย้าย task ไปยัง sprint ถัดไปได้ โดยการเปิด task นั้นๆ และแก้ไขข้อมูลในหน้าต่างที่แสดงขึ้นมา หรือใช้งานแบบ in-line ในหน้าต่าง **Backlog** โดยการเลือก **Move to iteration** แต่ในขั้นตอนนี้ คุณไม่ต้องย้าย task นี้ไปยัง sprint ถัดไป
 
-    > **Note**: There is also a lot of customization available.
+11. ในแท่บ **Taskboard** ของ **Sprints**
+    - จากด้านขวามือของหน้าจอ
+    - คลิกเลือกปุ่มไอคอน View Options และเลือก **Assigned To=** ในรายการแบบเลื่อนลง
 
-12. Click the **Configure team settings** cogwheel icon (directly to the right of the funnel icon).
-13. On the **Settings** panel, select the **Styles** tab, click **+ Styling rule**, under the **Rule name** label, in the **Name** textbox, type **Development**, and, in the **Card color** dropdown list, select the green rectangle.
+    > **หมายเหตุ**: การกำหนดค่านี้ จะทำให้คุณสามารถตรวจสอบความคืบหน้าของ task โดยแยกตามบุคคล แทนที่จะแยกตาม backlog item
 
-    > **Note**: This will color all cards green if they meet the rule criteria set directly below, in the **Rule criteria** section.
+    > **หมายเหตุ**: ยังมีการปรับแต่งอีกหลายแบบนะ
 
-14. In the **Rule criteria** section, in the **Field** dropdown list, select **Activity**, in the **Operator** dropdown list, select **=**, and, in the **Value** dropdown list, select **Development**.
+#### การใช้ styles rule ในการแสดงผลของ task 
 
-    !["Settings" window, make sure all fields have mentioned information](images/m1/EShop-WEB-styles_v1.png)
+12.   คลิกปุ่มไอคอนฟันเฟืองที่ชื่อ **Configure team settings** (อยู่ทางขวาของ funnel icon)
 
-    > **Note**: This will set all cards assigned to **Development** activities green.
+
+13. ในหน้าต่าง **Setting** 
+    - ให้เลือกแท่บ **Styles**
+    - คลิกที่ปุ่ม **+ Styling rule** 
+    - ในส่วนของ **Rule name** ให้พิมพ์ **Development** 
+    - ในรายการแบบเลื่อนลง ให้เลือกสี่เหลี่ยมสีเขียว
+
+    > **หมายเหตุ**: การกำหนดค่านี้ จะทำให้ทุกๆ task ที่มีการกำหนด **Activity** เป็น **Development** จะถูกกำหนดสีเป็นสีเขียว
+
+
+14. ในส่วนของ **Rule criteria**
+    - ในรายการของ **Field** ให้เลือก **Activity**
+    - ในรายการของ **Operator** ให้เลือก **=**
+    - และในรายการของ **Value** ให้เลือก **Development**.
+
+     ![Settings" window, make sure all fields have mentioned information](images/m1/EShop-WEB-styles_v1.png)
+
+
+16. ยังอยู่ในหน้าต่าง **Settings** ให้เลือกแท่บ **Backlogs**
+
+    > **หมายเหตุ**: คุณสามารถตั้งค่าระดับที่สามารถใช้ใน Navigation ได้ โดยค่าเริ่มต้นจะไม่รวม Epics แต่คุณสามารถเปลี่ยนค่านี้ได้
+
+17. ยังอยู่ในหน้าต่าง **Settings** ให้เลือกแท่บ **Working days**
+
+    > **หมายเหตุ**: การกำหนดค่า **Working days** นี้ จะทำให้คุณสามารถกำหนดวันทำงานของทีมได้ ซึ่งจะมีผลกับการคำนวณ capacity และ burndown
+
+18.  ยังอยู่ในหน้าต่าง **Settings** ให้เลือกแท่บ **Working with bugs**
+
+        > **หมายเหตุ**: การกำหนดค่า **Working with bugs** นี้ จะทำให้คุณสามารถกำหนดว่า bug จะถูกแสดงอย่างไรบน board
+
+19. ในหน้าต่าง **Settings** ให้คลิกที่ปุ่ม **Save and close** เพื่อบันทึกการเปลี่ยนแปลง
+
+    > **หมายเหตุ**: ตอนนี้ task ที่มีการกำหนด **Activity** เป็น **Development** จะถูกกำหนดสีเป็นสีเขียว ซึ่งจะทำให้ง่ายต่อการตรวจสอบความคืบหน้าของงาน
 
     ![Sprint Tasks styles](images/m1/EShop-WEB-sprint-green_v1.png)
 
-15. On the **Settings** panel, select the **Backlogs** tab.
-
-    > **Note**: Entries on this tab allow you to set the levels available for navigation. Epics are not included by default, but you could change that.
-
-16. On the **Settings** panel, select the **Working days** tab.
-
-    > **Note**: Entries on this tab allow you to specify the **Working days** the team follows. This applies to capacity and burndown calculations.
-
-17. On the **Settings** panel, select the **Working with bugs** tab.
-
-    > **Note**: Entries on this tab allow you to specify how bugs are presented on the board.
-
-18. On the **Settings** panel, click **Save and close** to save the styling rule.
-
-    > **Note**: The task associated with **Development** is now green and very easy to identify.
 
 #### Task 4: Customize Kanban boards
 
-In this task, you will step through the process of customizing Kanban boards.
 
-To maximize a team's ability to consistently deliver high quality software, Kanban emphasizes two main practices. The first, visualizing the flow of work, requires that you map your team's workflow stages and configure a Kanban board to match. The second, constraining the amount of work in progress, requires that you set work-in-progress (WIP) limits. You're then ready to track progress on your Kanban board and monitor key metrics to reduce lead or cycle time. Your Kanban board turns your backlog into an interactive signboard, providing a visual flow of work. As work progresses from idea to completion, you update the items on the board. Each column represents a work stage, and each card represents a user story (blue cards) or a bug (red cards) at that stage of work. However, every team develops its own process over time, so the ability to customize the Kanban board to match the way your team works is critical for the successful delivery.
+ในแบบฝึกหัดนี้ คุณจะได้เรียนรู้การปรับแต่ง Kanban boards
 
-1. In the vertical navigational pane of the Azure DevOps portal, in the list of the **Boards** items, select **Boards**.
-2. On the **Boards** panel, click the **Configure board settings** cogwheel icon (directly to the right of the funnel icon).
+- เพื่อให้ทีมสามารถส่งมอบซอฟต์แวร์ที่มีคุณภาพสูงได้อย่างสม่ำเสมอ การใช้ Kanban จึงเน้นไปที่ 2 แนวทางหลัก ๆ คือ 
+    1. การแสดงผลของการทำงาน ซึ่งจำเป็นต้องมีการกำหนด workflow stages และการกำหนดค่า Kanban board ให้ตรงกับ workflow stages นั้น 
+    2. การจำกัดจำนวนงานที่กำลังดำเนินการ ซึ่งจำเป็นต้องกำหนด work-in-progress (WIP) limits 
 
-    > **Note**: The team is emphasizing work done with data, so there is special attention paid to any task associated with accessing or storing data.
+- จากนั้นคุณก็พร้อมที่จะติดตามความคืบหน้าบน Kanban board และตรวจสอบ metrics ที่สำคัญเพื่อลด cycle time 
+- ด้วย Kanban board คุณสามารถแปลง backlog ของคุณให้เป็น interactive signboard ที่มีการแสดงผลของการทำงาน ซึ่งจะแสดงผลเป็นการแสดงผลของงาน แต่ละคอลัมน์จะแสดงถึง workflow stages และแต่ละการ์ดจะแสดงถึง user story (blue cards) หรือ bug (red cards) ใน workflow stages นั้น ๆ 
+- ทุกทีมสามารถปรับแต่ง process ของตนเองได้
 
-3. On the **Settings** panel, select the **Tag colors** tab, click **+ Tag color**, in the **Tag** textbox, type **data** and leave the default color in place.
+#### การกำหนดสีให้ tag
 
-    !["Settings" window, "Tag colors", include "data" tag](images/m1/EShop-WEB-tag_color_v1.png)
+1. ในแถบเมนูด้านซ้ายของ Azure DevOps portal, เลือกไอคอนเมนู **Boards** และเลือก **Boards**.
 
-    > **Note**: Whenever a backlog item or bug is tagged with **data**, that tag will be highlighted.
+2. ในหน้าต่าง **Board** ให้คลิกที่ไอคอนฟันเฟืองที่ชื่อ **Configure board settings** (อยู่ทางขวาของ funnel icon)
 
-4. From the **Configure board settings** (cogwheel) On the **Settings** panel, select the **Annotations** tab.
+    > **หมายเหตุ**: ในสถานการณ์นี้ ทีมของคุณกำลังให้ความสำคัญกับงานที่เกี่ยวข้องกับ data  ดังนั้นจึงมีการกำหนดค่าเพิ่มเติมเพื่อให้งานที่เกี่ยวข้องกับการเข้าถึงหรือการจัดเก็บข้อมูล สามารถแสดงผลได้อย่างชัดเจน
 
-    > **Note**: You can specify which **Annotations** you would like included on cards to make them easier to read and navigate. When an annotation is enabled, the child work items of that type are easily accessible by clicking the visualization on each card.
+3. ในหน้าต่าง **Settings** 
+   - ให้เลือกแท่บ **Tag colors** 
+   - คลิกที่ปุ่ม **+ Tag color** 
+   - ในช่อง **Tag** ให้พิมพ์ **data** 
+   - และในส่วนของ **Color** ให้เลือกสีที่เป็นค่าเริ่มต้น หรือสีที่ต้องการ
+  
+        !["Settings" window, "Tag colors", include "data" tag](images/m1/EShop-WEB-tag_color_v1.png)
 
-5. On the **Settings** panel, select the **Tests** tab.
 
-    > **Note**: The **Tests** tab enables you to configure how tests appear and behave on the cards.
+        > **หมายเหตุ**: ในกรณีที่มีการกำหนด tag ให้กับ backlog item หรือ bug ที่มีการกำหนด tag เป็น **data** จะถูกเน้นสีเหลือง
 
-6. On the **Settings** panel, click **Save and close** to save the styling rule.
-7. From the **Board** tab of the **EShop-WEB** panel, open the Work Item representing the **As a customer, I want to view new tutorials** backlog item.
-8. From the detailed item view, at the top of the panel, to the right of the **0 comments** entry, click **Add tag**.
-9. In the resulting textbox, type **data** and press the **Enter** key.
-10. Repeat the previous step to add the **ux** tag.
-11. Save these edits by clicking **Save & Close**.
+4. จากหน้าต่าง **Configure board settings** (cogwheel) ในแท่บ **Settings** ให้เลือกแท่บ **Annotations**
 
+    > **หมายเหตุ**: คุณสามารถกำหนดว่าจะแสดง **Annotations** ใดบนการ์ด ซึ่งจะทำให้ง่ายต่อการอ่าน และค้นหา 
+    
+    > โดยการกำหนดค่า annotation ที่เปิดใช้งาน การ์ดจะแสดงข้อมูลของ child work item ที่เกี่ยวข้อง โดยการคลิกที่การ์ด
+
+
+5. ในหน้าต่าง **Settings** ให้เลือกแท่บ **Tests**
+   
+   > **หมายเหตุ**: แท่บนี้ จะทำให้คุณสามารถกำหนดว่าจะแสดง **Tests** ใดบนการ์ด ซึ่งจะทำให้ง่ายต่อการอ่าน และค้นหา
+
+6. ในหน้าต่าง **Settings** ให้คลิกที่ปุ่ม **Save and close** เพื่อบันทึกการเปลี่ยนแปลง
+7. ในแท่บ **Board** ของ **EShop-WEB** 
+   - ให้เปิด Work Item (backlog item) ที่ชื่อว่า **As a customer, I want to view new tutorials**
+
+8. จากรายละเอียดของ item 
+   - สังเกตบริเวณด้านบนทางขวา 
+   - ให้คลิกที่ปุ่ม **Add tag** ที่อยู่ด้านขวาของ **0 comments**
+
+9. ในช่องข้อความที่แสดงขึ้นมา ให้พิมพ์ **data** และกดปุ่ม **Enter**
+10. ทำซ้ำขั้นตอนก่อนหน้า เพื่อเพิ่ม tag ที่ชื่อว่า **ux**
+11. บันทึกการเปลี่ยนแปลงโดยการคลิกที่ปุ่ม **Save & Close**
+    
     ![On the ""As a customer, I want to view new tutorials" panel, click "Save & Close"](images/m1/EShop-WEB-tags_v1.png)
+    > **หมายเหตุ**: สอง tag ที่เพิ่มเข้ามา จะแสดงบนการ์ด โดยที่ tag **data** จะถูกเน้นสีเหลือง และ tag **ux** จะถูกเน้นสีฟ้า
 
-    > **Note**: The two tags are now visible on the card, with the **data** tag highlighted in yellow as configured.
+#### การสร้าง workflow stages ใหม่ และการกำหนดค่า WIP limits
 
-12. On the **Boards** panel, click the **Configure board settings** cogwheel icon (directly to the right of the funnel icon).
-13. On the **Settings** panel, select the **Columns** tab.
-
-    > **Note**: This section allows you to add new stages to the workflow.
-
-14. Click **+ Column**, under the **Column name** label, in the **Name** textbox, type **QA Approved** and, in the **WIP limit** textbox, type **1**
-
-    > **Note**: The Work in progress limit of 1 indicates that only one work item should be in this stage at a time. You would ordinarily set this higher, but there are only two work items to demonstrate the feature.
-
+12. จากหน้าต่าง Boards ให้คลิกที่ไอคอนฟันเฟืองที่ชื่อ **Configure board settings** (อยู่ทางขวาของ funnel icon)
+13. ในหน้าต่าง **Settings** ให้เลือกแท่บ **Columns**
+    > **หมายเหตุ**: ในส่วนนี้จะทำให้เราสามารถเพิ่ม workflow stages ได้
+14. คลิกที่ปุ่ม **+ Column** 
+    - ในส่วนของ **Column name** 
+    - ให้พิมพ์ 
+        ```
+        QA Approved
+        ``` 
+    - และในส่วนของ **WIP limit** ให้พิมพ์ **1**
+  
     ![On the "Settings" panel, clikc "Save & Close"](images/m1/EShop-WEB-qa_column_v1.png)
 
-15. On the **Settings** panel, select the **Columns** tab again. Notice the ellipsis next to the **QA Approved** column you created. Select **Move right** twice, so that the QA Approved column gets positioned in-between **Committed** and **Done**.
-16. On the **Settings** panel, click **Save**.
+    > **หมายเหตุ**: ค่า **Work in progress limit** ที่เป็น 1 จะแสดงถึงว่า ใน stage นี้ จะมี work item อยู่ได้เพียง 1 อันเท่านั้น ซึ่งในปกติ ค่านี้จะถูกกำหนดให้สูงกว่านี้ แต่ในที่นี้ จะใช้เพื่อแสดงตัวอย่างเท่านั้น
 
-17. **Refresh** the **Boards portal**, so the **QA Approved** column is visible in the Kanban board view now.
-18. Drag the **As a customer, I want to see tutorials I recently viewed** work item from the **Committed** stage into the **QA Approved** stage.
-19. Drag the **As a customer, I want to view new tutorials** work item from the **Approved** stage into the **QA Approved** stage.
+15.  ในหน้าต่าง **Settings** ให้เลือกแท่บ **Columns** อีกครั้ง
+    - ให้สังเกตว่ามีไอคอน (...) ที่อยู่ด้านขวาของคอลัมน์ **QA Approved** ที่คุณสร้างขึ้น
+    - ให้คลิกไอคอน (...) และเลือก **Move right** 2 ครั้ง จนกว่าคอลัมน์ **QA Approved** จะถูกเลื่อนไปอยู่ระหว่าง **Committed** และ **Done**
+16. ในหน้าต่าง **Settings** ให้คลิกที่ปุ่ม **Save** เพื่อบันทึกการเปลี่ยนแปลง
+17. ในหน้าต่าง **Boards** ให้คลิกที่ปุ่ม **Refresh** เพื่อให้คอลัมน์ **QA Approved** แสดงผลบน Kanban board
+18. ในหน้าต่าง **Boards** ให้ลาก work item ที่ชื่อว่า **As a customer, I want to see tutorials I recently viewed** จากคอลัมน์ **Committed** ไปยังคอลัมน์ **QA Approved**
+
+19. ในหน้าต่าง **Boards** ให้ลาก work item ที่ชื่อว่า **As a customer, I want to view new tutorials** จากคอลัมน์ **Approved** ไปยังคอลัมน์ **QA Approved**
 
     ![The stage now exceeds its **WIP** limit and is colored red as a warning next to "QA Approved" column](images/m1/EShop-WEB-wip_limit_v1.png)
 
-    > **Note**: The stage now exceeds its **WIP** limit and is colored red as a warning.
+    > **หมายเหตุ**: คอลัมน์ **QA Approved** จะถูกเน้นสีแดง และแสดงข้อความเตือนว่า ค่า **WIP** ของคอลัมน์นี้ ถูกเกินกว่าที่กำหนดไว้
 
-20. Move the **As a customer, I want to see tutorials I recently viewed** backlog item back to **Committed**.
-21. On the **Boards** panel, click the **Configure board settings** cogwheel icon (directly to the right of the funnel icon).
-22. On the **Settings** panel, return to the **Columns** tab and select the **QA Approved** tab.
 
-    > **Note**: A lag often exists between when work gets moved into a column and when work starts. To counter that lag and reveal the actual state of work in progress, you can turn on split columns. When split, each column contains two sub-columns: **Doing** and **Done**. Split columns let your team implement a pull model. Without split columns, teams push work forward, to signal that they've completed their stage of work. However, pushing it to the next stage doesn't necessarily mean that a team member immediately starts work on that item.
+20. ในหน้าต่าง **Boards** ให้ลาก work item ที่ชื่อว่า **As a customer, I want to see tutorials I recently viewed** กลับไปยังคอลัมน์ **Committed**
 
-23. On the **QA Approved** tab, enable the **Split column into doing and done** checkbox to create two separate columns.
+##### การแบ่งคอลัมน์ออกเป็น doing และ done เพื่อลดความสับสน
 
-    > **Note**: As your team updates the status of work as it progresses from one stage to the next, it helps that they agree on what **done** means. By specifying the **Definition of done** criteria for each Kanban column, you help share the essential tasks to complete before moving an item into a downstream stage.
+มักเกิดความสับสนบ่อยๆ ระหว่างสถานะของ work item ที่อยู่ใน column ว่ามันแค่ถูกลากมาไว้ หรือมันกำหลังถูกดำเนินการอยู่ 
+    
+ดังนั้น คุณสามารถกำหนดค่า **Split column into doing and done** ได้ ซึ่งจะทำให้แต่ละคอลัมน์ จะถูกแบ่งออกเป็น 2 ส่วน คือ **Doing** และ **Done** ซึ่งจะทำให้ง่ายต่อการตรวจสอบความคืบหน้าของงาน โดยที่แต่ละคอลัมน์จะแสดงถึงสถานะของงานที่กำลังดำเนินการอยู่ และสถานะของงานที่เสร็จสิ้นแล้ว
 
-24. On the **QA Approved** tab, at the bottom of the panel, in the **Definition of done** textbox, type **Passes \*\*all\*\* tests**.
-25. On the **Settings** panel, click **Save and close**.
+21. ในหน้าต่าง **Boards** ให้คลิกที่ไอคอนฟันเฟืองที่ชื่อ **Configure board settings** (อยู่ทางขวาของ funnel icon)
+22. ในหน้าต่าง **Settings** ให้เลือกแท่บ **Columns** และเลือกแท่บ **QA Approved**
+23. ในแท่บ **QA Approved** ให้เลือก **Split column into doing and done** เพื่อสร้างคอลัมน์ 2 คอลัมน์
+
+    > **หมายเหตุ**: เมื่อทีมของคุณอัพเดทสถานะของงาน จากการทำงานใน stage นึง ไปยัง stage ถัดไป คุณควรกำหนดค่า **Definition of done** ให้กับแต่ละคอลัมน์ ซึ่งจะช่วยให้ทุกคนในทีม สามารถเข้าใจได้ว่า งานที่อยู่ใน stage นี้ จะถูกกำหนดให้เสร็จสิ้นเมื่อเข้าเงื่อนไขไหน
+
+24. ในแท่บ **QA Approved** ในส่วนของ **Definition of done** ให้พิมพ์ 
+    ```
+    Passes \*\*all\*\* tests**.
+    ```
+25. ในหน้าต่าง **Settings** ให้คลิกที่ปุ่ม **Save and close** เพื่อบันทึกการเปลี่ยนแปลง
 
     ![On the "Settings" panel, review information and click "Save and close"](images/m1/dd_v1.png)
 
-    > **Note**: The **QA Approved** stage now has **Doing** and **Done** columns. You can also click the informational symbol (with letter **i** in a circle) next to the column header to read the **Definition of done**.
+    > **หมายเหตุ**: ตอนนี้ คอลัมน์ **QA Approved** จะถูกแบ่งออกเป็น 2 คอลัมน์ คือ **Doing** และ **Done** ซึ่งจะทำให้ง่ายต่อการตรวจสอบความคืบหน้าของงาน โดยที่แต่ละคอลัมน์จะแสดงถึงสถานะของงานที่กำลังดำเนินการอยู่ และสถานะของงานที่เสร็จสิ้นแล้ว
 
 ![Split Columns for QA Approved](images/m1/EShop-WEB-qa_2columns_v1.png)
 
-26. On the **Boards** panel, click the **Configure boards settings** cogwheel icon (directly to the right of the funnel icon).
 
-    > **Note**: Your Kanban board supports your ability to visualize the flow of work as it moves from new to done. When you add **swimlanes**, you can also visualize the status of work that supports different service-level classes. You can create a swimlane to represent any other dimension that supports your tracking needs.
+##### การสร้าง Swimlanes
 
-27. On the **Settings** panel, select the **Swimlanes** tab.
-28. On the **Swimlanes** tab, click **+ Swimlane**, directly under the **Swimlane name** label, in the **Name** textbox, type **Expedite**.
-29. On the **Settings** panel, click **Save**.
+Kanban board ของเรา สามารถแสดงผลของการทำงานได้ โดยการแสดงผลของงานที่อยู่ในสถานะต่าง ๆ ตั้งแต่เริ่มต้น จนถึงเสร็จสิ้น และเมื่อคุณเพิ่ม **swimlanes** คุณสามารถแสดงผลของงานที่อยู่ในสถานะต่าง ๆ ที่มีการกำหนดความสำคัญ โดยคุณสามารถสร้าง swimlane ที่แสดงถึงสถานะของงานที่อยู่ในสถานะต่าง ๆ ได้
+
+26.  ในหน้าต่าง **Boards** ให้คลิกที่ไอคอนฟันเฟืองที่ชื่อ **Configure boards settings** (อยู่ทางขวาของ funnel icon)
+27.  ในหน้าต่าง **Settings** ให้เลือกแท่บ **Swimlanes**
+28.  ในแท่บ **Swimlanes** 
+    - ให้คลิกที่ปุ่ม **+ Swimlane** ที่อยู่ใต้ **Swimlane name** 
+    - ในช่องข้อความ **Name** ให้พิมพ์ **Expedite**
+29.  ในหน้าต่าง **Settings** ให้คลิกที่ปุ่ม **Save** เพื่อบันทึกการเปลี่ยนแปลง
 
     ![On the "Settings" panel, review information and click "Save"](images/m1/EShop-WEB-swimlane_v1.png)
 
-30. Back on the **Board** tab of the **Boards** panel, drag and drop the **Committed** work item onto the **QA Approved \| Doing** stage of the **Expedite** swimlane so that it gets recognized as having priority when QA bandwidth becomes available.
+30.  ในหน้าต่าง **Boards** ให้ลาก work item ที่ชื่อว่า **Committed** ไปยังคอลัมน์ **QA Approved \| Doing** ของ swimlane **Expedite** เพื่อแสดงถึงความสำคัญของงานนี้ โดยงานนี้จะถูกดำเนินการเมื่อทีม QA มีเวลาว่าง
+
 
 #### Task 5: Customize team process
 
@@ -449,11 +626,13 @@ All processes are shared within the same organization. That is, one or more team
 
     > **Note**: Once the work item is saved, Azure DevOps will also save the new custom information so that it will be available for queries and through the rest of Azure DevOps.
 
-### Exercise 2 (optional) : Define dashboards
+### Exercise 2 (optional) : การกำหนด dashboards
 
 In this task, you will step through the process of creating dashboards and their core components.
 
 Dashboards allow teams to visualize status and monitor progress across the project. At a glance, you can make informed decisions without having to drill down into other parts of your team project site. The Overview page provides access to a default team dashboard which you can customize by adding, removing, or rearranging the tiles. Each tile corresponds to a widget that provides access to one or more features or functions.
+
+แปลไทย
 
 1. In the vertical navigational pane of the Azure DevOps portal, select the **Overview** icon and, in the list of the **Overview** items, select **Dashboards**.
 2. If necessary, on the **Dashboards** pane, in the upper left corner, in the **eShopOnWeb Team** section, select **eShopOnWeb Team - Overview** and review the existing dashboard.
