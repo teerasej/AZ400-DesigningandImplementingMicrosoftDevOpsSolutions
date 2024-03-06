@@ -110,7 +110,7 @@ In this task, you will add a YAML build definition to the existing project.
 
 In this task, you will create two Azure web apps representing the **DevTest** and **Production** environments, into which you'll deploy the application via Azure Pipelines.
 
-1. From the lab computer, start a web browser, navigate to the [**Azure Portal**](https://portal.azure.com), and sign in with the user account that has the Owner role in the Azure subscription you will be using in this lab and has the role of the Global Administrator in the Microsoft Entra tenant associated with this subscription.
+1. From the lab computer, start a web browser, navigate to the [**Azure Portal**](https://portal.azure.com)(https://portal.azure.com), and sign in with the user account that has the Owner role in the Azure subscription you will be using in this lab and has the role of the Global Administrator in the Microsoft Entra tenant associated with this subscription.
 2. In the Azure portal, click the **Cloud Shell** icon, located directly to the right of the search textbox at the top of the page.
 3. If prompted to select either **Bash** or **PowerShell**, select **Bash**.
 
