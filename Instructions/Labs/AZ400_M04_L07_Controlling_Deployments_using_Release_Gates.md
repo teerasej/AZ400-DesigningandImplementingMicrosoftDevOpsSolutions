@@ -132,6 +132,7 @@ In this task, you will create two Azure web apps representing the **DevTest** an
     SERVICEPLANNAME='az400m04l09-sp1'
     az appservice plan create -g $RESOURCEGROUPNAME -n $SERVICEPLANNAME --sku S1
     ```
+    > **Note**: in some case, the azure subscription will be limited with qouta or SKU. Try to specify with different location with `az appservice plan create -g $RESOURCEGROUPNAME -n $SERVICEPLANNAME --sku S1 --location <region name>`
 
 6. Create two web apps with unique app names.
 
